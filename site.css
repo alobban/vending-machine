@@ -1,0 +1,47 @@
+body {
+    overflow: hidden
+}
+
+.machine {
+    margin: 30px 0 0 -30px;
+}
+
+.cell {
+    height: 110px;
+    margin-bottom: 20px;
+}
+
+.cell:hover {
+    outline: 1px solid red;
+}
+
+.productInfo {
+    padding-left: 20px;
+}
+
+.payButton {
+    width: 100px;
+    height: 60px;
+    margin-top: 20px;
+    font-size: 2em;
+    margin-left: 15px;
+}
+
+.selected .image {
+    animation-name: rotate;
+    animation-duration: 2s;
+}
+
+.sold .image {
+    animation-name: drop;
+    animation-duration: 2s;
+}
+
+@keyframes rotate {
+    33% { transform: rotate(-15deg); }
+    66% { transform: rotate(15deg); }
+}
+
+@keyframes drop {
+    99% { transform: translateY(600px) rotate(120deg); }
+}

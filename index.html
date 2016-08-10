@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" href="site.css">
     <title>Title</title>
 </head>
 <body>
     <div class="container">
         <h1>Vending machine simulation</h1>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-4">
+            <h4>
+                Paid: $
+                <span id="total"></span>
+                <br><br>
+                <button class="tbn btn-primary"
+                    onclick="machine.acceptCoin(new Quarter())">
+                    Insert quarter
+                </button>
+            </h4>
+        </div>
     </div>
     <script src="js/app.js"></script>
 </body>
