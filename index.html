@@ -9,19 +9,36 @@
 <body>
     <div class="container">
         <h1>Vending machine simulation</h1>
-        <div class="col-md-8">
-
+        <div class="col-md-8 machine" data-bind="foreach: cells">
+            <div class="col-md-4 cell" data-bind="click: $parent.select, css: {selected: $parent.selectedCell().product === $data.product, sold: sold}">
+                <div class="col-md-6 image">
+                    <img data-bind="attr: {src: product.category.getImageUrl(), alt: product.category.name }" />
+                </div>
+                <div class="col-md-6 productInfo">
+                    <div data-bind="text: product.name"></div>
+                    <h4 data-bind="text: stock"></h4>
+                    <h4 data-bind="text: '$ ' + product.price"></h4>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
             <h4>
                 Paid: $
                 <span id="total" data-bind="text: paid"></span>
-                <br><br>
-                <button class="tbn btn-primary"
-                    onclick="machine.acceptCoin(new Quarter())">
-                    Insert quarter
-                </button>
             </h4>
+            <div data-bind="foreach: acceptedCoins">
+                <img data-bind="attr: { src: getImageUrl(), alt: value}, click: $parent.acceptCoin" />
+            </div>
+
+            <h3 data-bind="with: selectedCell">
+                <div data-bind="text: product.name"></div>
+                <div>
+                    $
+                    <span data-bind="text: product.price"></span>
+                </div>
+            </h3>
+
+            <button class="btn btn-primary payButton" data-bind="enable: canPay, click: pay">Pay</button>
         </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
