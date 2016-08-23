@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "amd",
     "target": "es5",
-    "outFile": "../js/app.js",
+    "outDir": "../js",
     "sourceMap": true
   },
   "exclude": [

@@ -2,54 +2,49 @@
  * Created by vagrant on 8/10/16.
  */
 
-namespace Coins {
-
-    let imagePath = "img/";
-
-    export abstract class Coin {
-        constructor(public value:number) {
-        }
-
-        abstract getImageUrl():string;
+export abstract class Coin {
+    constructor(public value:number) {
     }
 
-    export class Dime extends Coin {
-        constructor() {
-            super(0.10);
-        }
+    abstract getImageUrl():string;
+}
 
-        getImageUrl():string {
-            return imagePath + "Dime.png";
-        }
+export class Dime extends Coin {
+    constructor() {
+        super(0.10);
     }
 
-    export class Quarter extends Coin {
-        constructor() {
-            super(0.25);
-        }
+    getImageUrl():string {
+        return "img/Dime.png";
+    }
+}
 
-        getImageUrl():string {
-            return "img/Quarter.png";
-        }
+export class Quarter extends Coin {
+    constructor() {
+        super(0.25);
     }
 
-    export class Half extends Coin {
-        constructor() {
-            super(0.50);
-        }
+    getImageUrl():string {
+        return "img/Quarter.png";
+    }
+}
 
-        getImageUrl():string {
-            return "img/Half.png";
-        }
+export class Half extends Coin {
+    constructor() {
+        super(0.50);
     }
 
-    export class Dollar extends Coin {
-        constructor() {
-            super(1.00);
-        }
+    getImageUrl():string {
+        return "img/Half.png";
+    }
+}
 
-        getImageUrl():string {
-            return "img/Dollar.jpg";
-        }
+export class Dollar extends Coin {
+    constructor() {
+        super(1.00);
+    }
+
+    getImageUrl():string {
+        return "img/Dollar.jpg";
     }
 }
