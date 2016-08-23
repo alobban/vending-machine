@@ -4,7 +4,7 @@
 
 abstract class Coin {
     constructor(public value: number) {
-        this.value = value;
+        this.Value = value;
     }
     abstract getImageUrl(): string;
 }

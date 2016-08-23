@@ -16,6 +16,13 @@ class SodaCategory extends ProductCategory{
     }
 }
 
+class NutsCategory extends ProductCategory{
+    name = "Nuts";
+    getImageUrl() {
+        return this.imgPath + "Nuts.png"
+    }
+}
+
 class ChipsCategory extends ProductCategory{
     name = "Potato chips";
     getImageUrl() {
