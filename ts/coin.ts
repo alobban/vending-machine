@@ -7,9 +7,7 @@ namespace Coins {
     let imagePath = "img/";
 
     export abstract class Coin {
-        Value: number = 0;
         constructor(public value:number) {
-            this.Value = value;
         }
 
         abstract getImageUrl():string;

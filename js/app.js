@@ -12,8 +12,6 @@ var Coins;
     var Coin = (function () {
         function Coin(value) {
             this.value = value;
-            this.Value = 0;
-            this.Value = value;
         }
         return Coin;
     }());
@@ -257,6 +255,7 @@ var productFactory = (function () {
 ///<reference path="./coin.ts"/>
 ///<reference path="./product.ts"/>
 ///<reference path="./productFactory.ts"/>
+// import * as Coins from "./coin"
 var VendingMachineSize;
 (function (VendingMachineSize) {
     VendingMachineSize[VendingMachineSize["samll"] = 6] = "samll";
@@ -285,7 +284,7 @@ var VendingMachine = (function () {
         };
         this.acceptCoin = function (coin) {
             var oldTotal = _this.paid();
-            _this.paid(oldTotal + coin.Value);
+            _this.paid(oldTotal + coin.value);
         };
         this.pay = function () {
             if (_this.selectedCell().stock() < 1) {

@@ -6,6 +6,8 @@
     ///<reference path="./product.ts"/>
     ///<reference path="./productFactory.ts"/>
 
+// import * as Coins from "./coin"
+
 enum VendingMachineSize {
     samll = 6,
     medium = 9,
@@ -41,9 +43,9 @@ class VendingMachine {
         this.selectedCell(cell);
     };
 
-    acceptCoin = (coin: Coins.Quarter): void => {
+    acceptCoin = (coin: Coins.Coin): void => {
         let oldTotal = this.paid();
-        this.paid(oldTotal + coin.Value);
+        this.paid(oldTotal + coin.value);
     };
 
     pay = (): void => {
